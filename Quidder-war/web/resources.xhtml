@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Quider</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/goalsAppStyle.css" />        
+        <link rel="stylesheet" type="text/css" media="all" href="css/jScrollPane.css" />        
+        <link rel="stylesheet" type="text/css" media="all" href="css/userAccount.css" />        
+        <link rel="stylesheet" type="text/css" media="all" href="css/button.css" />        
+        <link rel="stylesheet" type="text/css" media="all" href="fancybox/jquery.fancybox.css" />               
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script><!--esta versión de jquery permite trabajar en conjunto con el scroll y el popup        -->
+        <script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.0.6"></script>
+        <script type="text/javascript" src="js/popup.js"></script>                      
+        <script type="text/javascript" src="js/jquery.limit-1.2.source.js"></script>                      
+        <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="js/jScrollPane.js"></script>
+        <script type="text/javascript" src="js/scroll.js"></script> 
+    </h:head>
+    <h:body>
+        <!-- hidden inline form -->                
+        <div id="inline">                        
+            <iframe id="resource-iframe" scrolling="auto" frameborder="0" seamless="seamless" src="#" style="width:100%; height:100%; top:0px;" />            
+        </div>
+        <!--        <div id="wrapper">-->
+        <div id="menu-wrapper">
+            <div id="menu">   
+                <img href="#" src="images/logo.png" width="20" height="20" style="float: left; margin: 10px 0px 5px 105px;"></img>
+                <p style="float: left; margin: 10px 0px 5px 3px; font-size: 16px; color: #BDBDBD">Quidder</p>
+                <ul style="float: right; margin-right: 88px;">
+                    <!--                    <li><a href="/GoalsApp-war/faces/index.xhtml">Home</a></li>                                           -->
+                    <li class="current_page_item"><a href="/GoalsApp-war/faces/resources.xhtml">Home</a></li>
+                    <li><a href="#">Network</a></li>
+                    <li><a href="#">Discover</a></li>
+                    <li><h:form>
+                            <h:commandLink 
+                                value="Sign out" 
+                                action="#{usersManagedBean.logout}"/>
+                        </h:form></li>                                                                                                    
+                </ul>
+            </div>
+        </div>                	
+        <div id="two-column" class="container">
+            <div class="tbox1">
+                <div class="box-style1">
+                    <div id="user-account" colspan="3">
+                        <img class="user-pic" src="#{usersManagedBean.imageUrl}" width="40" height="40"/>
+                        <a class="user-name" href="#">@#{usersManagedBean.currentUserAccount.idUserAccount}</a>
+                        <p class="user-description">View my profile page</p>
+                    </div>
+                    <div class="info-box1">
+                        <a class="tagged-title" href="#">100</a>
+                        <p class="tagged-description">Shared resources</p>
+                    </div>
+                    <div class="info-box2">
+                        <a class="tagged-title" href="#">100</a>
+                        <p class="tagged-description">Tagged resources</p>
+                    </div>
+                </div>    
+            </div>
+            <div class="tbox2">  
+                <div class="box-style2">
+                    <div class="content">        
+                        <div id="horizontal-list">
+                            <nav>
+                                <ul>                                    
+                                    <li><a href="#">Refresh</a></li>
+                                    <li><a href="#">View all</a></li>                                    
+                                </ul>
+                            </nav>
+                        </div>  
+                        <div class="scroll-pane pane">
+                            <div id="resources-list">                               
+                                <h:form>                                                     
+                                    <ul id="all-resources">   
+                                        <ui:repeat value="#{resourcesManagedBean.resources}" var="items">   
+                                            <p:growl id="messages" showDetail="true"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+                                            <li>
+                                                <div class="resource-information">
+                                                    <input type="hidden" class="resourceUrl" value="#{items.resourceUrl}" ></input>
+                                                    <input type="hidden" class="resourceImageAddress" value="#{items.resourceImageUrl}" ></input>
+                                                    <img class="image-resource" width="65" height="68" src="#{items.resourceImageUrl}"></img>
+                                                    <img href="#inline" class="modalbox view-resource" src="images/globe.png" width="25" height="25"/>      
+                                                    <a href="#"><h3><h:outputText value="#{items.resourceName}"/></h3></a>                                                                                          
+                                                    <p class="from">Added a day ago by <strong><a href="#">@ljsou</a></strong> | from <a class="source" value="#{items.resourceUrl}" href="#{items.resourceUrl}">Wikipedia</a></p>                                                    
+                                                    <p class="description"><h:outputText value="#{items.resourceDescription}"/></p>                                                    
+                                                    <img style="float: left; margin: 7px 3px 0px 0px;" href="#" src="images/tag9.png" width="14" height="14"></img><p class="tagme" style="margin-top: 7px;"><a>Tag me!</a></p> 
+                                                    <img style="float: left; margin: 7px 3px 0px 0px;" href="#" src="images/share.png" width="14" height="14"></img><p class="shareme" style="margin-top: 7px;"><a>Share me!</a></p>                                                   
+                                                    <img style="float: left; margin: 7px 1px 0px 0px;" href="#" src="images/favorite.png" width="20" height="20"></img><p class="useful" style="margin-top: 7px;"><a>Useful!</a></p> 
+                                                    <p:rating value="#{ratingController.rating3}" style="float: left; margin: 0px 4px 5px 0px;" >  
+                                                        <p:ajax event="rate" listener="#{ratingController.onrate}" update="messages" />  
+                                                        <p:ajax event="cancel" listener="#{ratingController.oncancel}" update="messages" />  
+                                                    </p:rating> 
+                                                </div>
+                                                <div class="comodin">                                                                                                                                                 
+                                                    <div class="tagging-submit">
+                                                        <p>This resource helps me to:</p>                                                        
+                                                        <textarea id="myTextarea#{items.idResource}" class="textarea-tagging" rows="2" cols="51"></textarea>                                                       
+                                                        <script type="text/javascript">
+                                                            $('#myTextarea' + #{items.idResource}).limit('60', '#charsLeft' + #{items.idResource});
+//                                                            $('#myTextarea' + #{items.idResource}).click(function(event) {
+//                                                                console.log("click text area");
+//                                                                event.preventDefault();
+//                                                                $('#button' + #{items.idResource}).removeAttr('disabled');
+//                                                            });
+                                                        </script>
+                                                        <p:commandButton id="button#{items.idResource}" value="Submit" oncomplete="dlg.show()" style="float: left; margin: 2px; padding: 3px 15px 3px 15px;"/>  
+                                                        <div id="charsLeft#{items.idResource}" style="float: left; margin: 10px 0px 0px 5px; font-size: 10px;"></div>                                                        
+                                                    </div>
+                                                </div> 
+                                            </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                                        </ui:repeat>     
+                                    </ul> 
+                                </h:form>                                                                                                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+            <div class="tbox3">
+                <div class="box-style3">
+                    <div class="content">
+                        <h3 style="text-align: center; margin: 6px 0px 4px 0px;">Title</h3>
+                        <img id="image-overview" src="images/noimage.png" width="320" height="320"/>
+                        <p>Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. </p>
+                        <!--                        <a href="#" class="button">Tag me!</a>                                       -->
+                    </div>
+                </div>    
+            </div>
+        </div>  
+        <!--        </div>-->
+        <div id="footer" class="entry">
+            <p>Copyright © 2013 Telematics Engineering Group <a href="http://git.unicauca.edu.co/">(GIT)</a> and <a href="https://twitter.com/ljsou">@ljsou</a>. All rights reserved.</p>
+        </div>
+        <!-- end #footer -->       
+    </h:body>
+</html>

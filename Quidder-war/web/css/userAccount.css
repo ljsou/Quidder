@@ -1,0 +1,108 @@
+/* 
+    Document   : userAccount
+    Created on : 29/04/2013, 03:07:35 PM
+    Author     : Javier
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#user-account {
+    width: 180px;
+    height: 60px;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+
+}
+
+.user-pic {
+    float: left;
+    /*    border: #0044cc solid 1px;*/
+    padding: 5px;
+    margin: 5px;
+}
+
+.user-name {
+    float: left;
+    color: #424242;
+    font-size: 14px; 
+    font-weight: 900;
+    margin-top: 15px;
+    margin-left: 2px;
+}
+
+
+.user-name:hover {
+    color: #000;
+    text-decoration: underline; 
+}
+
+.user-description { 
+    float: left;
+    color: #999;
+    font-size: 9px; 
+    font-weight: 400;
+    margin-left: 2px;
+    margin-top: -1px;
+}
+
+#user-behavior-info {
+    width: 180px;
+    height: 40px;
+    background: #E5E6DD;
+    /*    border: #0081c2 solid 1px;*/
+}
+
+.tagged-title {
+    float: left;
+    color: #424242;
+    font-size: 14px; 
+    font-weight: 900;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.tagged-title:hover {
+    text-decoration: underline; 
+}
+
+.tagged-description { 
+    float: left;
+    color: gray;
+    font-size: 9px; 
+    font-weight: 400;
+    margin-left: 7px;
+    margin-top: -3px;
+    text-align: justify;
+    /*    border: #003bb3 solid 1px;*/
+    
+}
+
+.info-box1 {
+    width: 89px;
+    height: 40px;
+    float: left;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+/*    background: #E5E6DD;*/
+}
+
+.info-box2 {
+    width: 90px;
+    height: 40px;
+    float: right;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+/*    border-right-style: ridge;
+    border-right-width: thin;*/
+    border-left-style: ridge;
+    border-left-width: thin;
+}
+
+
+/*.info-box3 {
+    width: 59px;
+    height: 40px;
+    float: right;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+}*/

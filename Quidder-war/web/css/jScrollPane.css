@@ -1,0 +1,135 @@
+.pane {
+    height: 500px;
+    width: 625px;
+/*    border: #1e4c99 solid 1px;*/
+}
+.jScrollPaneContainer {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+/*        border: #0e3a7d solid 1px;*/
+}
+
+.jScrollPaneTrack {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    /*    background: #FFFFFF;*/
+    background: #E6E6E6;
+    opacity: 0.7;
+    
+    
+    /*    border-radius: 4px;*/
+}
+
+/*.jScrollPaneTrack:hover {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;    
+    background: #F2F2F2;
+    transition-property: all;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+        border-radius: 4px;
+}*/
+.jScrollPaneDrag {
+    position: absolute;
+    background: #BDBDBD;
+    /*    background: #FFFFFF;*/
+    cursor: pointer;
+    overflow: hidden;
+    /*    border-radius: 4px;*/
+}
+/*.jScrollPaneDrag:hover {
+    position: absolute;
+    background: #BDBDBD;
+    cursor: pointer;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+        border-radius: 4px;
+}*/
+.jScrollPaneDragTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.jScrollPaneDragBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+a.jScrollArrowUp {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    text-indent: -2000px;
+    overflow: hidden;
+    /*background-color: #666;*/
+    height: 9px;
+}
+a.jScrollArrowUp:hover {
+    /*background-color: #f60;*/
+}
+
+a.jScrollArrowDown {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    text-indent: -2000px;
+    overflow: hidden;
+    /*background-color: #666;*/
+    height: 9px;
+}
+a.jScrollArrowDown:hover {
+    /*background-color: #f60;*/
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+    /*background-color: #f00;*/
+}
+
+.jspVerticalBar {
+    width: 8px;
+    background: transparent;
+    right:10px;
+    border: #0e3a7d solid;
+}
+
+.jspHorizontalBar {
+    bottom: 5px;
+    width: 100%;
+    height: 8px;
+    background: transparent;
+}
+.jspTrack {
+    background: transparent;
+    border: #0e3a7d solid;
+}
+
+.jspDrag {
+    background: url(images/transparent-black.png) repeat;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+    float: left;
+    height: 100%;
+}
+
+.jspCorner {
+    display:none
+}

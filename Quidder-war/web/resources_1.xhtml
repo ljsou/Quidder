@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"     
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Quider</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/extension.css" />                              
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.limit-1.2.source.js"></script>              
+
+        <!--        <script>
+                    function init() {
+                        window.parent.setUpFrame();
+                        return true;
+                    }
+        
+                    function yourMethod(arg) {
+                        console.log("at frame:" + arg);
+                    }
+        
+                </script>-->
+    </h:head>
+    <h:body style="width: 200px; height: 120px; border: #0088cc solid 1px;">                                                                  
+        <h:form prependId="false">   
+            <p:growl id="messages" showDetail="true"/>  
+            <!--                        <div >
+                                        <p>This resource helps me to:</p>                                                        
+                                        <textarea id="myTextarea" class="textarea-tagging" rows="3" cols="21"></textarea>                                                       
+                                        <script type="text/javascript">
+                                            $('#myTextarea').limit('60', '#charsLeft');           
+                                        </script>
+                                        <br />
+                                        <div id="charsLeft" style="margin: 5px 15px 0px 5px; font-size: 10px;"></div>                                                        
+                                    </div>                                            -->
+
+            <img href="#" src="images/logo.png" width="20" height="20" style="float: left; margin: 0px 0px 0px 0px;"></img>
+            <p style="float: left; margin: 0px 0px 0px 0px; font-size: 16px; color: #BDBDBD">uidder</p>                  
+            <p:inputTextarea rows="3" cols="22" counter="counter" maxlength="50"       
+                             style="float: left; margin-bottom: 5px; margin-top: 5px;" counterTemplate="{0}" autoResize="false"/>                
+            <p:rating value="#{quidderListener.rating}" style="float: right;">  
+                <p:ajax event="rate" listener="#{quidderListener.onrate}" update="messages" />  
+                <p:ajax event="cancel" listener="#{quidderListener.oncancel}" update="messages" />  
+            </p:rating> 
+            <p:button style="float: left; width: 33px; height: 22px" value="Bookmark" icon="ui-icon-check">  
+                <!--                                    <f:param name="productId" value="10" />  -->
+            </p:button> 
+            <h:outputText id="counter" style="float: left; font-size: 10px; margin: 2px;"/>  
+        </h:form>           
+    </h:body>
+</html>

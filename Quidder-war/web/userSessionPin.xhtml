@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />        
+        <img href="#" src="images/logo.png" width="20" height="20"></img>
+        <title>Quidder</title>                
+        <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+        <link href="css/goalsAppStyle.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link rel="stylesheet" type="text/css" media="all" href="fancybox/jquery.fancybox.css" />               
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script><!--esta versión de jquery permite trabajar en conjunto con el scroll y el popup        -->
+        <script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.0.6"></script>
+        <script type="text/javascript" src="js/popup.js"></script>       
+        <!--        <script src="http://code.jquery.com/jquery.js"></script>-->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/userSessionPinPopup.js" ></script>
+
+    </head>
+    <body style=" background: #fff;">    
+        <div id="user-session-pin-popup">                        
+            <p>Your user session PIN for the Quidder is #{usersManagedBean.ID}, please...</p>          
+        </div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img href="#" src="images/logo.png" width="20" height="20" style="float: left; margin: 10px 0px 5px 0px;"></img>
+                    <a class="brand" href="#">uidder</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">              
+            <p id="profile"></p>
+            <div id="logo">    
+                <img src="images/quidder2.png" width="300" height="100"/>            
+                <blockquote>
+                    <p>Quidder is an easy tool allows you to keep, share, and discover the best of the Web.</p> 
+                    <small>It´s a great place allows you to save, organize, and remember the resources (by their links)
+                        you find useful and interesting on the web.  #{usersManagedBean.ID}
+                    </small> 
+                </blockquote>
+                <h:form>
+                    <a href="#user-session-pin-popup" class="modalbox view-resource">link!!</a>
+                </h:form>
+            </div>
+            <div id="footer" class="entry">                      
+                <small>Copyright © 2013 Telematics Engineering Group <a href="http://git.unicauca.edu.co/">(GIT)</a> and <a href="https://twitter.com/ljsou">@ljsou</a>. All rights reserved.
+                </small>
+            </div>
+        </div>
+    </body>
+</html>

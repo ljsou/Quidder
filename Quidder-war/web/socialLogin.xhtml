@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>SocialLogin</title>         
+        <script>
+            //<![CDATA[
+            (function() {
+                if (typeof(window.socialid) !== "object")
+                    window.socialid = {};
+
+                socialid.onLoad = function() {
+                    socialid.login.init(142, {loginType: "callback"});
+                    socialid.login.renderLoginWidget("login-5c05ff5e", {
+                        theme: 'icons', providers: ["facebook", "twitter", "linkedin"]
+                    });
+                    eventHandlers();
+                };
+
+                var e = document.createElement('script');
+                e.type = 'text/javascript';
+                e.id = 'socialid_api_script';
+                if (document.location.protocol === 'https:') {
+                    e.src = 'https://app.socialidnow.com/assets/api/socialid.js';
+                } else {
+                    e.src = 'http://app.socialidnow.com/assets/api/socialid.js';
+                }
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(e, s);
+            })();
+
+            // add event handlers
+            function eventHandlers() {
+                socialid.events.onLoginSuccess.addHandler(function(data) {
+                    console.log("Website received onLoginSuccess: ", data);
+                    alert("Website received onLoginSuccess: " + data);
+                });
+                socialid.events.onLoginCancel.addHandler(function(data) {
+                    console.log("Website received onLoginCancel: ", data);
+                    alert("Website received onLoginCancel: " + data);
+                });
+                socialid.events.onLoginError.addHandler(function(data) {
+                    console.log("Website received onLoginError: ", data);
+                    alert("Website received onLoginError: " + data);
+                });
+                socialid.events.onLoginStart.addHandler(function(data) {
+                    console.log("Website received onLoginStart: ", data);
+                    alert("Website received onLoginStart: " + data);
+                });
+            }
+
+            //]]>
+        </script>
+    </head>
+    <body>
+        <h2>Social Login</h2>
+        <div id='login-5c05ff5e' style='display: inline-block; padding: 5px'></div>
+    </body>
+</html>

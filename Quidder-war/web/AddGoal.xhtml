@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>        
+    </h:head>
+    <h:body>
+        <h3>Add Goal</h3>
+        <h:form id="myForm">
+            <h:outputLabel value="Id Goal:"/>
+            <h:inputText id="goalTag" value="#{resourcesGoalsUsersManagedBean.idGoal}"></h:inputText>
+            <h:outputLabel value="Goal:"/>
+            <h:inputText id="IdGoalTag" value="#{resourcesGoalsUsersManagedBean.goal}"></h:inputText>
+            <p:commandButton update="myForm" value="Submit" action="dlg.show()" actionListener="#{resourcesGoalsUsersManagedBean.createGoalTag()}"></p:commandButton>
+        </h:form>
+        <p:dialog id="dlg" >
+            <h:outputText value="#{resourcesGoalsUsersManagedBean.goal}"/>
+        </p:dialog>
+        
+    </h:body>
+</html>

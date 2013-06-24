@@ -1,0 +1,398 @@
+/* 
+    Document   : home
+    Created on : 16/05/2013, 08:23:26 PM
+    Author     : Javier
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.logo-image {
+    float: left; 
+    margin: 10px 0px 5px 0px;
+}
+
+.home-wrapper {
+    margin-top: 18px; 
+    border: #fff solid 1px;
+}
+
+.resources {
+    margin-top: 55px; 
+    width: 485px; 
+    /*    margin: auto;*/
+
+}
+
+.resource-image {
+    width: 64px;
+    height: 64px;
+    float: left;
+    margin: 0px 10px 15px -4px;
+    border-radius: 2px;
+}
+
+.paragraph {
+    color: #666;
+    width: 385px; 
+    height: 25px; 
+    overflow: hidden; 
+    text-align: justify;
+    line-height: 13px;
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-top: -7px;
+    /*        border: #0088cc solid 1px;*/
+}
+
+.layer0 {
+    position: fixed; 
+    z-index: -1; 
+    min-width: 940px; 
+    width: 940px;
+    /*    border: #E7E2DC solid 1px;*/
+}
+
+.user-information {
+    padding: 16px 0px 10px 0px;
+    height: 260px;
+    /*    border: #E7E2DC solid 1px;     */
+    position: relative;
+    /*    top: 0px;
+        left: 0px;*/
+}
+
+.resource-search-ground {
+    width: 485px; 
+    position: relative; 
+    z-index: 10;
+}
+
+.resource-review {
+    float: right;  
+    margin-top: 24px;     
+    width: 275px; 
+    /*    border: #E7E2DC solid 1px;*/
+}
+
+.resource-review-title {
+    text-align: center; 
+    margin: 6px 0px 4px 0px;
+}
+
+.resource-review-img {
+    height: 260px;
+    width: 265px; 
+}
+
+.resource-information {
+    background-color: #fafafa;
+    color: #666;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 17px;
+    text-align: justify;
+}
+
+.resource-container {
+    position: fixed; 
+    z-index: 1; 
+    min-width: 940px; 
+    width: 940px; 
+    height: 0px;  
+    /*    border: #DE5635 solid 1px;*/
+}
+
+.resource-search-panel {
+    /*    width: 629px; */
+    padding: 3px 13px; 
+    border-bottom: #E7E2DC solid 1px; 
+    border-left: #E7E2DC solid 1px; 
+    background: #f5f5f5;
+    /*     border: #DE5635 solid 1px;*/
+}
+
+.resources-label {
+    font-size: 15px;
+    color: #999999;
+    float: left; 
+    margin: 21px 0px 0px -4px;
+    display: inline-block;
+    *display: inline;
+    text-shadow: 0 1px 0 #ffffff;
+    *zoom: 1;
+}
+
+.add-on-search {
+    float: right;
+    margin: 15px -5px 5px 5px;
+}
+
+.add-on-icon {
+    margin-top: 3px;
+    margin-left: -22px; 
+    padding-left: 5px;
+}
+
+.resource-summary {
+    /*    height: 70px;*/
+    float: left;
+    padding: 5px 5px;    
+    border-top: #fff solid 1px;
+    border-left: #fff solid 1px;
+    border-bottom: #fff solid 1px;
+    /*        border: #E7E2DC solid 1px;*/
+}
+.resource-summary:hover { 
+    cursor: pointer;        
+    border-top: #f5f5f5 solid 1px;
+    border-left: #f5f5f5 solid 1px;
+    border-bottom: #f5f5f5 solid 1px;
+    background: #f5f5f5;
+    /*        border: #E7E2DC solid 1px;*/
+}
+
+.tagme {
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+.tagme-button {    
+    width: 295px;
+}
+
+.action {    
+    margin: 2px 10px;
+    /*    padding-bottom: 10px;*/
+}
+
+.action-viewer {    
+    margin: 2px 5px;
+    /*    padding-bottom: 10px;*/
+}
+
+/*.action-btn:hover {    
+    margin: 2px 5px;
+    background-color: #a9dba9;
+    border-color: #46a546;
+        padding-bottom: 10px;
+}*/
+
+.taggin-container {
+    background: #ccc;
+}
+
+.user-name {
+    font-size: 15px;
+}
+
+.user-name:hover {
+    /*    text-decoration: underline;*/
+    cursor: pointer; 
+}
+.user-img {
+    margin-right: 3px;
+}
+
+.fontXSmall {
+    font-size: 11px;
+    color: #999;
+    margin-top: -5px;
+}
+
+.fontSmall {
+    color: #666;
+    font-size: 12px; 
+    line-height: 14px;
+}
+
+.fontNormal {
+    font-size: 12px;
+}
+
+.fontMedium {
+    font-size: 14px;    
+}
+
+.fontLarge {
+    font-size: 16px;    
+}
+
+.fontXLarge {
+    font-size: 18px;    
+}
+
+.logout{
+    width: 50px;
+    text-decoration: none;
+}
+
+.logout:hover{
+    text-decoration: none;
+}
+
+.resource-load {    
+    height: 70%;
+}
+
+
+.modal-viewer {
+    position: fixed;
+    top: 8%;
+    left: 33%;
+    z-index: 1050;
+    margin-left: -280px;
+    background-color: #ffffff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    *border: 1px solid #999;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    outline: none;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.modal-viewer.fade {
+    top: -25%;
+    -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, top 0.3s ease-out;
+    transition: opacity 0.3s linear, top 0.3s ease-out;
+}
+
+.modal-viewer.fade.in {
+    top: 10%;
+}
+
+.modal-viewer-header {
+    padding: 3px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-viewer-header .close {
+    margin-top: 2px;
+}
+
+.modal-viewer-header h3 {
+    margin: 0;
+    line-height: 30px;
+}
+
+.modal-viewer-body {
+    position: relative;
+    max-height: 400px;
+    height: 400px;
+    padding: 15px;
+    /*    overflow-y: auto;*/
+}
+
+.modal-viewer-form {
+    margin-bottom: 0;
+}
+
+.modal-viewer-footer {   
+    padding: 14px 15px 15px;
+    margin-bottom: 0;
+    text-align: right;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+    *zoom: 1;
+    -webkit-box-shadow: inset 0 1px 0 #ffffff;
+    -moz-box-shadow: inset 0 1px 0 #ffffff;
+    box-shadow: inset 0 1px 0 #ffffff;
+}
+
+.modal-viewer-footer:before,
+.modal-viewer-footer:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.modal-viewer-footer:after {
+    clear: both;
+}
+
+.bts-resource-review-panel {        
+    /*    background-color: transparent; */
+    background: #fafafa;
+    border-bottom: #E7E2DC solid 1px;
+    height: 20px;
+    padding: 10px 5px 4px 10px;     
+}
+
+.font-shadow{
+    color: #999999;    
+    display: inline-block;
+    *display: inline;
+    text-shadow: 0 1px 0 #ffffff;
+    *zoom: 1;
+}
+
+.quidders {
+    margin-top: 15px;
+    background-color: #EFF5FB;
+    height: 42px;
+    padding: 9px 15px;
+}
+
+.accordion-inner-add-on {
+
+    /*    border-top: 1px solid #e5e5e5; */
+    /*    Las dos siguientes líneas las adicioné para modificar el fondo de la parte de tagging*/  
+    /*    border-bottom-left-radius: 6px;*/
+}
+
+.first {
+    margin-left: -5px;
+}
+
+.last {
+    margin-left: 12px;
+}
+
+.close-quids {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    margin-right: -2px;
+    margin-top: -11px;
+    border: none;
+}
+
+.close-quids:hover,
+.close-quids:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.goal-tag {
+/*    margin-top: 15px;*/
+    background-color: #EFF5FB;
+    /*    height: 42px;*/    
+    height: 30px;
+    border-top: #fff solid 1px;    
+    border-bottom: #ccc solid 1px;    
+    padding: 10px 5px 5px 5px;
+    text-decoration: none;
+}
+
+.first-goal {
+    margin-top: 20px;    
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />        
+        <title></title>        
+        <link rel="stylesheet" type="text/css" media="screen" href="css/extension.css" />         
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.limit-1.2.source.js"></script>   
+        <!--        <script>
+                    function setUpFrame() {
+                        var frame = window.frames['frame-id'];
+                        frame.yourMethod('hello');
+                    }
+                </script>-->
+    </head>
+    <body>
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.limit-1.2.source.js"></script> 
+        <script type="text/javascript" src="js/tab.js"></script>
+        <!--        <p id="currentLink">..hola.</p>        -->
+        <!--        <ul id="savedLinks"></ul>-->
+        <!--        <hr />                                                                                                              -->
+        <!--        <iframe name="frame-id" scrolling="auto" frameborder="0" seamless="seamless" style="width:168px; height:120px; top:0px;" src="http://localhost:8080/Quidder-war/faces/resources_1.xhtml"/>                                                                                                                                                                         -->
+        <form>                
+            <div >
+                <input id="currentLink" type="hidden" hidden="hidden" name="current">..fasdfahola.</input>        
+                <p style="margin: 5px 15px 0px 5px; font-size: 12px;">This resource helps me to:</p>                                                        
+                <div id="charsLeft" style="margin: 0px 15px 0px 5px; font-size: 10px;"></div>  
+                <textarea id="myTextarea" class="textarea-tagging" rows="3" cols="21" placeholder="!" name="area" ></textarea>                                                       
+                <script type="text/javascript">
+                    $('#myTextarea').limit('60', '#charsLeft');
+//                    var link = $('#currentLink').html();
+//                    $('#myTextarea').attr("placeholder", link);
+                </script>                                                                                     
+                <input type="submit" value="Submit"/>
+            </div>             
+        </form>  
+    </body>
+</html>

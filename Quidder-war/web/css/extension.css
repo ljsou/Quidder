@@ -1,0 +1,30 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+/** { margin: 0; padding: 0; outline: none; }
+
+*/
+body {   
+    background: #fff;
+/*    background: #E5E6DD;
+    background: #FAFAFA;*/
+    font-family: 'Oxygen', sans-serif;
+    font-size: 13px;
+    color: #8A8985;
+}/*
+
+/**/
+.textarea-tagging {
+    border-radius: 4px; 
+    border-color: #D8D8D8;    
+}
+
+.textarea-tagging:hover{      
+    border: 1px solid #58ACFA;   
+}
+
+

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />        
+        <img href="#" src="images/logo.png" width="20" height="20"></img>
+        <title>Quidder</title>                
+        <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+        <link href="css/goalsAppStyle.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
+        <link href="css/home.css" rel="stylesheet" media="screen"/>  
+
+        <script type="text/javascript" src="js/LoginRadiusSDK.1.0.0.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/LoginRadius.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/login.js" ></script>
+        <script type="text/javascript">
+            function functionGetValue(){
+                console.log("entró");                
+                var idResource1 = document.getElementById("idresource0").value;
+                var idResource2 = document.getElementById("idresource1").value;
+                var idResource3 = document.getElementById("idresource2").value;
+                var idResource4 = document.getElementById("idresource3").value;
+                var goal1 = document.getElementById("goal0").value;
+                var goal2 = document.getElementById("goal1").value;
+                var goal3 = document.getElementById("goal2").value;
+                var goal4 = document.getElementById("goal3").value;
+                console.log("idResource1: " + idResource1 + " - goal1: " + goal1);
+                console.log("idResource2: " + idResource2 + " - goal2: " + goal2);
+                console.log("idResource3: " + idResource3 + " - goal3: " + goal3);
+                console.log("idResource4: " + idResource4 + " - goal4: " + goal4);                
+            }
+        </script>
+
+    </h:head>
+    <h:body onload="#{usersManagedBean.loggedIn}">   
+        <!-- Modal -->        
+        <ui:repeat value="#{resourcesManagedBean.resources}" var="resourcesView">
+            <div id="myModal#{resourcesView.idResource}" class="modal-viewer hide fade resource-load" tabindex="1" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 75%;" >
+                <div class="modal-viewer-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="myModalLabel">Quidder Viewer </h4>
+                </div>
+                <div>
+                    <!--                <p>One fine body…</p>-->
+                    <iframe id="resource-iframe" scrolling="auto" frameborder="0" seamless="seamless" src="#{resourcesView.resourceUrl}" style="width:100%; height:450px; top:0px;" />
+
+                </div>
+                <div class="modal-viewer-footer">
+<!--                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                        <button class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </ui:repeat>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">                   
+                    <img class="logo-image" href="#" src="images/logo.png" width="20" height="20" style=""></img>
+                    <a class="brand" href="#">uidder</a>
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Me<b class="caret"></b></a>
+                                <ul class="dropdown-menu pull-left">                                   
+                                    <li><a href="#"><i class="icon-th-large"></i> View profile</a></li>
+                                    <li><a href="#"><i class="icon-pencil"></i> Edit profile</a></li>
+                                    <li><a href="#"><i class=" icon-wrench"></i> Settings</a></li>
+                                    <li><a href="#"><i class="icon-exclamation-sign"></i> Help</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/Quidder-war/faces/logout.xhtml"><i class="icon-off"></i> Sign out</a></li>                                    
+                                </ul>
+                            </li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container home-wrapper" >
+            <div class="row-fluid">
+                <div class="span2">
+                </div>
+                <div class="span6" data-spy="scroll">
+                    <div class="tabbable tabs-left"  > <!-- Only required for left/right tabs onClick="this.contentEditable = 'false';" -->
+                        <ul class="nav nav-tabs">     
+                            <li class="resources"></li>
+                            <ui:repeat value="#{resourcesManagedBean.resources}" var="items">                            
+                                <li>                                
+                                    <div href="#tab#{items.idResource}" data-toggle="tab">
+                                        <img class="media-object pull-left resource-image" src="#{items.resourceThumbnailAddress}"/>                                                                         
+                                        <h5 class="media-heading">#{items.resourceName}</h5>                                                                                
+                                        <p class="from">Added a day ago by <a href="#">@ljsou</a> | from <a class="source" value="#{items.resourceUrl}" href="#{items.resourceUrl}">Wikipedia</a></p>                                                                    
+                                        <p class="paragraph">#{items.resourceDescription}</p>
+
+                                        <a class="accordion-toggle action fontSmall" data-toggle="collapse" href="#collapse#{items.idResource}">
+                                            Quid me! <i class="icon-tags" ></i>
+                                        </a>
+                                        <a class="accordion-toggle action fontSmall" data-toggle="collapse" href="#collapseOne">
+                                            Share me! <i class="icon-share"></i>
+                                        </a>
+                                        <a class="accordion-toggle action fontSmall" data-toggle="collapse" href="#collapseOne">
+                                            Useful! <i class="icon-star"></i>   
+                                        </a>
+                                        <div id="collapse#{items.idResource}" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <h:form id="formId#{items.idResource}">                                                 
+                                                    <!--                                                <button type="submit" class="btn btn-primary btn-small">Submit</button>                                                -->
+                                                    <div class="input-append  tagme">
+                                                        <input type="hidden" class="tagme-button" id="idresource#{items.idResource}" value="#{items.idResource}"/>
+                                                        <input type="text" class="tagme-button" id="goal#{items.idResource}" name="inputGoal"></input>
+                                                        <h:commandButton class="btn btn-primary" value="Quid!" onclick="functionGetValue();"/>
+                                                    </div>
+                                                </h:form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>                                
+                            </ui:repeat>  
+                        </ul>                        
+                    </div>
+                </div>
+                <div class="layer0">
+                    <div class="span2"></div>
+                    <div class="span6 resource-search-ground"></div>
+                </div>
+                <div class="resource-container"> 
+                    <div class="span2 user-information">
+                        <img class="media-object pull-left user-img" width="40" height="40" src="#{usersManagedBean.imageUrl}"/>                                                                         
+                        <strong class="media-heading user-name">#{usersManagedBean.currentUserAccount.displayName}</strong>
+                        <p class="fontXSmall">View my Profile</p>
+                    </div>
+                    <div class="span4 resource-search-panel" style="width: 485px;">                       
+                        <p class="resources-label">Resources</p>
+                        <form class="form-search">                                            
+                            <div class="navbar-search add-on-search">                                            
+                                <input type="text" class="search-query" placeholder="Search..." style="width: 340px;"/>                                                    
+                                <i class="icon-search add-on-icon"></i>
+                            </div>                                        
+                        </form>                        
+                    </div>                        
+                    <div class="resource-review">
+                        <div class="tab-content">
+                            <ui:repeat value="#{resourcesManagedBean.resources}" var="resourcesReview">                                
+                                <div class="tab-pane" id="tab#{resourcesReview.idResource}">
+                                    <div >
+                                        <!--                                    <div class="thumbnail">-->
+                                        <h4 class="resource-review-title">#{resourcesReview.resourceName}</h4>
+                                        <img id="image-overview" class="img-polaroid resource-review-img" src="#{resourcesReview.resourceImageAddress}"/>
+<!--                                        <p class="resource-information">#{resourcesReview.resourceDescription}</p>-->
+                                    </div>
+                                    <div class="bts-resource-review-panel">
+                                        <!-- Button to trigger modal -->                                        
+                                        <a class="accordion-toggle action fontSmall first" data-toggle="collapse" href="#quids#{resourcesReview.idResource}">
+                                            Quids! <i class="icon-comment" ></i></a>
+                                        <a class="accordion-toggle action fontSmall" data-toggle="collapse" href="#quidders#{resourcesReview.idResource}">
+                                            Quidders <i class="icon-user"></i></a>                                       
+                                        <a class="action fontSmall action-viewer" href="#myModal#{resourcesReview.idResource}" data-toggle="modal">
+                                            Viewer <i class="icon-fullscreen"></i></a>                                        
+                                        <a class="action fontSmall action-viewer last" href="#">
+                                            <i class=" icon-plus-sign"></i></a>                                        
+                                    </div>
+                                    <div id="quids#{resourcesReview.idResource}" class="accordion-body collapse"> 
+                                        <ul class="nav">     
+                                            <li class="first-goal"> </li>
+                                            <ui:repeat value="#{resourcesManagedBean.resources}" var="items">                            
+                                                <li>                                
+                                                    <div class="goal-tag">
+                                                        <button type="button" class="close-quids" data-dismiss="modal" aria-hidden="true">×</button>
+                                                        <p class="fontSmall">Aquí va el tag que representa el propósito de este objetivo</p>
+                                                    </div>
+                                                </li>                                
+                                            </ui:repeat>  
+                                        </ul>                                         
+                                    </div>
+                                    <div id="quidders#{resourcesReview.idResource}" class="accordion-body collapse">                                                                             
+                                        <div class="goal-tag">
+                                            <button type="button" class="close-quids" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <p class="fontSmall">Quidder  D</p>
+                                        </div> 
+                                    </div>
+                                </div>                               
+                            </ui:repeat> 
+                        </div>
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+    </h:body>
+</html>

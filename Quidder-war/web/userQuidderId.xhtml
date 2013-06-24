@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />        
+        <img href="#" src="images/logo.png" width="20" height="20"></img>
+        <title>Quidder</title>                
+        <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+        <link href="css/goalsAppStyle.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+
+        <script type="text/javascript" src="js/LoginRadiusSDK.1.0.0.js"></script>
+        <script src="https://hub.loginradius.com/include/js/LoginRadius.js" ></script>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/userSessionPin.js" ></script>
+
+    </head>
+    <body style="background-image:url(images/world5.png);background-repeat:no-repeat;background-position:right top;">    
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img href="#" src="images/logo.png" width="20" height="20" style="float: left; margin: 10px 0px 5px 0px;"></img>
+                    <a class="brand" href="#">uidder</a>
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">
+<!--                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>-->
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">                                   
+                                    <li class="nav-header">Sign up with:</li>                                    
+                                    <div id="interfacecontainerdiv" class="interfacecontainerdiv"></div>                              
+                                </ul>
+                            </li>
+                        </ul>                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">                               	        
+            <p id="profile"></p>
+            <h:form prependId="false">                                            
+                <h:inputHidden id="user-session-pin" value="#{usersManagedBean.jsonUserDataProfile}"></h:inputHidden>                
+                <button id="user-session-pin-button" hidden="hidden" type="submit" value="Button" action="#{usersManagedBean.userSessionPin()}"></button>                                             
+            </h:form>
+            <div id="logo">  
+                <img src="images/quidder2.png" width="300" height="100"/>            
+                <blockquote>
+                    <p>Quidder is an easy tool allows you to keep, share, and discover the best of the Web.</p> 
+                    <small>It´s a great place allows you to save, organize, and remember the resources (by their links)
+                        you find useful and interesting on the web.
+                    </small> 
+                </blockquote>
+            </div>
+            <div id="footer" class="entry">                      
+                <small>Copyright © 2013 Telematics Engineering Group <a href="http://git.unicauca.edu.co/">(GIT)</a> and <a href="https://twitter.com/ljsou">@ljsou</a>. All rights reserved.
+                </small>
+            </div>
+        </div>
+    </body>
+</html>

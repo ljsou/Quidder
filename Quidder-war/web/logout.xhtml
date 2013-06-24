@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />        
+        <img href="#" src="images/logo.png" width="20" height="20"></img>
+        <title>Quidder</title>                
+        <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+        <link href="css/goalsAppStyle.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+
+        <script type="text/javascript" src="js/LoginRadiusSDK.1.0.0.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/LoginRadius.js"></script>
+<!--        <script src="https://hub.loginradius.com/include/js/LoginRadius.js" ></script>-->
+<!--        <script src="http://code.jquery.com/jquery.js"></script>-->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/login.js" ></script>
+
+<!--        <script>
+            (function() {
+                if (typeof(window.socialid) !== "object")
+                    window.socialid = {};
+
+                socialid.onLoad = function() {
+                    socialid.login.init(142, {loginType: "callback"});
+                    socialid.login.renderLoginWidget("login-0aa286fb", {
+                        theme: 'icons', providers: ["facebook"]
+                    });
+                };
+
+                var e = document.createElement('script');
+                e.type = 'text/javascript';
+                e.id = 'socialid_api_script';
+                if (document.location.protocol === 'https:') {
+                    e.src = 'https://app.socialidnow.com/assets/api/socialid.js';
+                } else {
+                    e.src = 'http://app.socialidnow.com/assets/api/socialid.js';
+                }
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(e, s);
+            })();
+        </script>-->
+    </head>
+    <body onload="#{usersManagedBean.logout()}" style="background-image:url(images/world5.png);background-repeat:no-repeat;background-position:right top;">    
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img href="#" src="images/logo.png" width="20" height="20" style="float: left; margin: 10px 0px 5px 0px;"></img>
+                    <a class="brand" href="#">uidder</a>
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in... <b class="caret"></b></a>
+                                <ul class="dropdown-menu">                                   
+                                    <li class="nav-header">Sign up with:</li>                                    
+                                    <div id="interfacecontainerdiv" class="interfacecontainerdiv" style="margin: 5px -7px -55px 0px;"></div>  <!-- this is for LoginRadiuss -->
+<!--                                    <div id='login-0aa286fb' style='display: inline-block; padding: 5px'></div>  this is for Social Login -->
+                                    <!--                                    <li class="divider"></li>-->
+                                    <!--                                    <li class="nav-header">Or Sign up with Email:</li>-->
+                                    <!--                                    <li><a href="#">Separated link</a></li>
+                                                                        <li><a href="#">One more separated link</a></li>-->
+                                </ul>
+                            </li>
+                        </ul>                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">                               	        
+            <p id="profile"></p>
+            <h:form prependId="false">                                            
+                <h:inputHidden id="provider" value="#{usersManagedBean.provider}"></h:inputHidden>
+                <h:inputHidden id="user-profile" value="#{usersManagedBean.jsonUserDataProfile}"></h:inputHidden>                                                                
+                <button id="buttonId" hidden="hidden" type="submit" value="Button" action="#{usersManagedBean.login()}"></button>                                             
+            </h:form>
+            <div id="logo">  
+                <img src="images/quidder2.png" width="300" height="100"/>            
+
+                <blockquote>
+                    <p>Quidder is an easy tool allows you to keep, share, and discover the best of the Web.</p> 
+                    <small>It´s a great place allows you to save, organize, and remember the resources (by their links)
+                        you find useful and interesting on the web.
+                    </small> 
+                </blockquote>
+            </div>
+            <div id="footer" class="entry">                      
+                <small>Copyright © 2013 Telematics Engineering Group <a href="http://git.unicauca.edu.co/">(GIT)</a> and <a href="https://twitter.com/ljsou">@ljsou</a>. All rights reserved.
+                    <!--                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8080/GoalsApp-war/faces/index.xhtml" data-text="Check out this site" data-via="ljsou" data-hashtags="GoalsApp" data-dnt="true">Tweet</a>
+                                        <script>!function(d, s, id) {
+                                                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                                if (!d.getElementById(id)) {
+                                                    js = d.createElement(s);
+                                                    js.id = id;
+                                                    js.src = p + '://platform.twitter.com/widgets.js';
+                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                }
+                                            }(document, 'script', 'twitter-wjs');</script>-->
+                </small>
+            </div>
+        </div>
+    </body>
+</html>

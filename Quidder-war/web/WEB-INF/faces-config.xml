@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{usersManagedBean.login}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/resources.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{usersManagedBean.login}</from-action>
+            <from-outcome>init</from-outcome>
+            <to-view-id>/loginError.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{usersManagedBean.login}</from-action>
+            <from-outcome>failed</from-outcome>
+            <to-view-id>/loginError.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>        
+        <managed-property>
+            <property-name>url</property-name>
+            <value>#{param.urk}</value>
+        </managed-property>
+    </managed-bean>
+</faces-config>
