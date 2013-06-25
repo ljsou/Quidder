@@ -396,3 +396,7 @@
 .first-goal {
     margin-top: 20px;    
 }
+
+.bold {
+    font-weight: 600; 
+}
