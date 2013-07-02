@@ -40,6 +40,14 @@
                         }
                     });
                 });
+
+                $(document).keypress(function(e) {
+                    if (e.which === 13) {
+                        console.log("you pressed enter");
+                        return false;
+                    }
+                });
+
             });
 
         </script>
@@ -122,7 +130,8 @@
                                                     <div class="input-append  tagme">
                                                         <input type="hidden" class="tagme-button" id="idresource#{items.idResource}" value="#{items.idResource}"/>
                                                         <input type="text" class="tagme-button" id="goal#{items.idResource}" name="inputGoal"></input>
-                                                        <input id="tgmBtn#{items.idResource}" type="button" class="btn btn-primary" value="Quid!" onclick="functionGetValue(#{items.idResource});" disabled="true"/>
+                                                        <input id="tgmBtn#{items.idResource}" type="button" class="btn btn-primary" value="Quid!" onclick="functionGetValue(#{items.idResource});
+                return false;" disabled="true"/>
                                                     </div>
                                                 </form>
                                             </div>
