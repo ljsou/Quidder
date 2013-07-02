@@ -22,23 +22,21 @@
         <script src="js/login.js" ></script>
         <script type="text/javascript">
             function functionGetValue(id) {
-                console.log("entró: " + id);
+                //console.log("entró: " + id);
                 var idResource = document.getElementById("idresource" + id).value;
                 var goal = document.getElementById("goal" + id).value;
                 document.getElementById("goal" + id).value = "";
-                console.log("idResource" + id + ": " + idResource + " - goal" + id + ": " + goal);
+                document.getElementById("tgmBtn" + id).disabled = true;
+                console.log("idResource" + id + ": " + " - goal" + id + ": " + goal);
             }
 
             $(function() {
                 $("#all-resources li").click(function(event) {
                     var index = $(this).prevAll().length - 1;
                     event.preventDefault();
-                    console.log("tgmBtn" + index);
-                    //$("#tgmBtn" + index).attr("disabled","disabled");
-                    $("#goal" + index).keypress(function(){
-                        if($(this).val() !== ''){
-                            console.log("quitar atribute " + "#tgmBtn" + index);
-                            $("#tgmBtn" + index).attr("disabled","false");
+                    $("#goal" + index).keypress(function() {
+                        if ($(this).val() !== ' ') {
+                            $("#tgmBtn" + index).removeAttr('disabled');
                         }
                     });
                 });
@@ -119,14 +117,14 @@
                                         </a>
                                         <div id="collapse#{items.idResource}" class="accordion-body collapse">
                                             <div class="accordion-inner">
-                                                <h:form id="formId#{items.idResource}" prependId="false">                                                 
+                                                <form id="formId#{items.idResource}" prependId="false">                                                 
                                                     <!--                                                <button type="submit" class="btn btn-primary btn-small">Submit</button>                                                -->
                                                     <div class="input-append  tagme">
                                                         <input type="hidden" class="tagme-button" id="idresource#{items.idResource}" value="#{items.idResource}"/>
                                                         <input type="text" class="tagme-button" id="goal#{items.idResource}" name="inputGoal"></input>
-                                                        <h:commandButton id="tgmBtn#{items.idResource}" class="btn btn-primary" value="Quid!" onclick="functionGetValue(#{items.idResource});" disabled="true"/>
+                                                        <input id="tgmBtn#{items.idResource}" type="button" class="btn btn-primary" value="Quid!" onclick="functionGetValue(#{items.idResource});" disabled="true"/>
                                                     </div>
-                                                </h:form>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
